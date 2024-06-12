@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .card:last-child {
+        margin-right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="bg-[url('./homebg.jpg')] h-screen p-5 bg-cover bg-center">
+      <div
+        class="search-box backdrop-blur-[1px] border flex items-center max-w-[800px] mx-auto rounded-full p-[6px]"
+      >
+        <div
+          class="back flex items-center justify-center min-w-8 h-8 rounded-full bg-black/[0.2] mr-[6px]"
+        >
+          <i class="text-white ri-arrow-go-back-line"></i>
+        </div>
+        <div
+          class="forward flex items-center justify-center min-w-8 h-8 rounded-full bg-black/[0.2]"
+        >
+          <i class="text-white ri-arrow-go-forward-line"></i>
+        </div>
+        <div
+          class="search bg-black/[0.15] p-1 rounded-full text-white flex items-center ml-12 mr-24 w-full"
+        >
+          <i class="ri-lock-2-line ml-2 mr-3"></i>
+          <input
+            class="placeholder:text-white w-full outline-none bg-transparent"
+            type="text"
+            placeholder="Aud!obuck"
+          />
+          <div
+            class="refresh flex justify-center items-center min-w-7 h-7 rounded-full bg-black/[0.2]"
+          >
+            <i class="ri-restart-line"></i>
+          </div>
+        </div>
+        <div
+          class="mode flex items-center justify-center min-w-8 h-8 rounded-full bg-black/[0.2]"
+        >
+          <i class="text-white ri-sun-line"></i>
+        </div>
+      </div>
+      <div class="music flex justify-center items-center my-6">
+        <div
+          class="menu flex text-white flex-col items-center justify-center w-fit h-fit bg-white/[0.1] rounded-full p-[6px] backdrop-blur ring-white ring-[0.1px] ring-inset mr-6"
+        >
+          <div
+            class="home mb-2 flex w-8 h-8 justify-center items-center bg-black/[0.2] rounded-full"
+          >
+            <i class="ri-home-5-fill"></i>
+          </div>
+          <i class="ri-notification-4-fill my-2"></i>
+          <i class="ri-bar-chart-box-fill my-2"></i>
+          <i class="ri-record-circle-fill my-2"></i>
+          <i class="ri-settings-4-fill mt-2 mb-1"></i>
+        </div>
+        <div
+          class="music-cards p-5 rounded-[20px] ring-white ring-[0.5px] ring-inset text-white bg-white/[0.1] backdrop-blur mr-20"
+        >
+          <div class="top-part flex justify-between mb-4">
+            <h1 class="font-medium text-lg">Top Recommendation</h1>
+            <div class="top-control flex">
+              <div
+                class="back flex items-center justify-center w-7 h-7 rounded-full bg-black/[0.2] mr-[6px]"
+              >
+                <i class="text-white ri-arrow-go-back-line"></i>
+              </div>
+              <div
+                class="forward flex items-center justify-center w-7 h-7 rounded-full bg-white/[0.3]"
+              >
+                <i class="text-white ri-arrow-go-forward-line"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="m-card-carousel no-scrollbar whitespace-nowrap max-w-[964px] overflow-hidden overflow-x-auto flex rounded-[16px] p-4 bg-[#d8d8d8]/[0.4] backdrop-blur-3xl"
+          ></div>
+          <div class="music-b-card flex mt-5">
+            <div class="artists">
+              <h1 class="font-medium text-lg mb-4">Following Artists</h1>
+              <div class="artist-card-wrap flex"></div>
+            </div>
+            <div class="continue">
+              <h1 class="font-medium mb-4 text-lg">Continue Playing</h1>
+              <div
+                class="latest-played mb-2 flex items-center p-2 rounded-lg bg-white/[0.1] backdrop-blur"
+              >
+                <div class="flex">
+                  <div
+                    class="lp-img w-11 h-11 overflow-hidden rounded-md mr-[10px]"
+                  >
+                    <img width="w-full h-full" src="./hq720.jpg" alt="" />
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-normal">Kya bataun ki madina</h4>
+                    <h4 class="text-[11px]">Syed Hassan</h4>
+                  </div>
+                </div>
+                <div class="flex ml-14">
+                  <div
+                    class="played-t flex items-center rounded-lg bg-white/[0.1] backdrop-blur p-1 mr-[6px]"
+                  >
+                    <i class="ri-play-fill text-xl"></i
+                    ><span class="text-[10px] pr-2">120k</span>
+                  </div>
+                  <div
+                    class="liked bg-white/[0.1] backdrop-blur p-1 px-[10px] rounded-lg"
+                  >
+                    <i class="ri-heart-3-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="latest-played flex items-center p-2 rounded-lg bg-white/[0.1] backdrop-blur"
+              >
+                <div class="flex">
+                  <div
+                    class="lp-img w-11 h-11 overflow-hidden rounded-md mr-[10px]"
+                  >
+                    <img width="w-full h-full" src="./hq720.jpg" alt="" />
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-normal">Kya bataun ki madina</h4>
+                    <h4 class="text-[11px]">Syed Hassan</h4>
+                  </div>
+                </div>
+                <div class="flex ml-14">
+                  <div
+                    class="played-t flex items-center rounded-lg bg-white/[0.1] backdrop-blur p-1 mr-[6px]"
+                  >
+                    <i class="ri-play-fill text-xl"></i
+                    ><span class="text-[10px] pr-2">120k</span>
+                  </div>
+                  <div
+                    class="liked bg-white/[0.1] backdrop-blur p-1 px-[10px] rounded-lg"
+                  >
+                    <i class="ri-heart-3-fill"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="music-control mx-auto bg-white/[0.1] backdrop-blur py-1 px-[6px] rounded-full w-fit flex items-center text-white">
+        <div class="flex items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"><i class="ri-rewind-fill mx-2"></i></div>
+        <div class="flex items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"><i class="ri-pause-fill mx-2 font-black"></i></div>
+        <div class="flex items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"><i class="ri-speed-fill mx-2"></i></div>
+        <div class="music-playing p-1 rounded-full bg-black/[0.2] backdrop-blur mx-3 flex items-center">
+          <div class="mp-img mr-2 w-7 h-7 rounded-full overflow-hidden">
+            <img src="./hq720.jpg" alt="" />
+          </div>
+          <div class="mp-content">
+            <h4 class="text-[12px] font-normal">Kya bataun ki madina</h4>
+            <h4 class="text-[10px] text-[#ddd]">Syed Hassan</h4>
+          </div>
+          <i class="ri-speaker-fill ml-14 mr-2"></i>
+          <i class="ri-more-fill ml-3 mr-3"></i>
+        </div>
+        <i class="ri-chat-quote-line mx-3"></i>
+        <i class="ri-file-list-line mx-3"></i>
+        <i class="ri-volume-up-fill mx-3 mr-[14px]"></i>
+      </div>
+      <!-- <div
+        class="bg-white/[0.1] mx-auto search-box flex items-center border w-fit p-[8px] rounded-full"
+      >
+        <div
+          class="back w-10 h-10 flex items-center justify-center bg-black/[0.2] rounded-full mr-2"
+        >
+          <i class="text-white ri-arrow-go-back-line"></i>
+        </div>
+        <div
+          class="forward w-10 h-10 flex items-center justify-center bg-black/[0.2] rounded-full mr-14"
+        >
+          <i class="text-white ri-arrow-go-forward-line"></i>
+        </div>
+
+        <div
+          class="search p-[4px] rounded-full bg-black/[0.1] flex text-white justify-center items-center"
+        >
+          <i class="ri-lock-2-line ml-60 mr-2"></i>
+          <input
+            class="placeholder:text-white bg-transparent h-full outline-none pr-24"
+            type="text"
+            placeholder="Aud!obuck"
+          />
+          <div
+            class="refresh bg-black/[0.2] rounded-full w-9 h-9 flex justify-center items-center"
+          >
+            <i class="ri-restart-line"></i>
+          </div>
+        </div>
+
+        <div
+          class="mode w-10 h-10 rounded-full flex justify-center items-center bg-black/[0.2] ml-32"
+        >
+          <i class="text-white ri-sun-line"></i>
+        </div>
+      </div> -->
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
