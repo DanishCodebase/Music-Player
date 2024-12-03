@@ -74,6 +74,21 @@ var naatReaders = [
     name: "Farhan Qadri",
     naatRead: "100 naat",
   },
+  {
+    img: "https://pbs.twimg.com/profile_images/859009654319394816/O4kslq_c_400x400.jpg",
+    name: "Asad Raza",
+    naatRead: "100 naat",
+  },
+  {
+    img: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRfN13q33CinfWNlU5H4mXPlYEv5idSDqJ_bKc1qpUZjfkz1btB",
+    name: "Fasihuddin",
+    naatRead: "147 naat",
+  },
+  {
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaEIcStS60_o0PL8AYFm-k3bCFYKT9t-3IHgClyzIeD-3O1wVu-_rVHm0B&s=0",
+    name: "Ghulam Qadri",
+    naatRead: "412 naat",
+  },
 ];
 
 function naatCard() {
@@ -116,12 +131,14 @@ function naatReaderCard() {
 }
 
 var audio = new Audio();
+var count = 0;
 
 function playNaat() {
   document
     .querySelector(".m-card-carousel")
     .addEventListener("click", function (event) {
-      var naat = naats[event.target.dataset.value];
+      count = event.target.dataset.value;
+      var naat = naats[count];
       document.querySelector(
         ".music-playing"
       ).innerHTML = `<div class="mp-img mr-2 w-7 h-7 rounded-full overflow-hidden">
@@ -136,9 +153,71 @@ function playNaat() {
           `;
       audio.src = naat.audio;
       audio.play();
+      document.querySelector(".play").style.display = "none";
+      document.querySelector(".pause").style.display = "flex";
     });
+}
+
+function controls() {
+  document.querySelector(".play").addEventListener("click", function () {
+    audio.src = naats[count].audio;
+    audio.play();
+    document.querySelector(".play").style.display = "none";
+    document.querySelector(".pause").style.display = "flex";
+  });
+  document.querySelector(".pause").addEventListener("click", function () {
+    audio.src = naats[count].audio;
+    audio.pause();
+    document.querySelector(".play").style.display = "flex";
+    document.querySelector(".pause").style.display = "none";
+  });
+
+  document.querySelector(".prev").addEventListener("click", function () {
+    if (count > 0) {
+      count--;
+      audio.src = naats[count].audio;
+      audio.play();
+      document.querySelector(".play").style.display = "none";
+      document.querySelector(".pause").style.display = "flex";
+      document.querySelector(
+        ".music-playing"
+      ).innerHTML = `<div class="mp-img mr-2 w-7 h-7 rounded-full overflow-hidden">
+            <img src="${naats[count].img}" alt="" />
+          </div>
+          <div class="mp-content">
+            <h4 class="text-[12px] font-normal">${naats[count].naat}</h4>
+            <h4 class="text-[10px] text-[#ddd]">${naats[count].name}</h4>
+          </div>
+          <i class="ri-speaker-fill ml-14 mr-2"></i>
+          <i class="ri-more-fill ml-3 mr-3"></i>
+          `;
+    }
+  });
+
+  document.querySelector(".next").addEventListener("click", function () {
+    if (count < naats.length - 1) {
+      count++;
+      audio.src = naats[count].audio;
+      audio.play();
+      document.querySelector(".play").style.display = "none";
+      document.querySelector(".pause").style.display = "flex";
+      document.querySelector(
+        ".music-playing"
+      ).innerHTML = `<div class="mp-img mr-2 w-7 h-7 rounded-full overflow-hidden">
+            <img src="${naats[count].img}" alt="" />
+          </div>
+          <div class="mp-content">
+            <h4 class="text-[12px] font-normal">${naats[count].naat}</h4>
+            <h4 class="text-[10px] text-[#ddd]">${naats[count].name}</h4>
+          </div>
+          <i class="ri-speaker-fill ml-14 mr-2"></i>
+          <i class="ri-more-fill ml-3 mr-3"></i>
+          `;
+    }
+  });
 }
 
 naatCard();
 naatReaderCard();
 playNaat();
+controls();

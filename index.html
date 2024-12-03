@@ -70,7 +70,7 @@
           <i class="ri-settings-4-fill mt-2 mb-1"></i>
         </div>
         <div
-          class="music-cards p-5 rounded-[20px] ring-white ring-[0.5px] ring-inset text-white bg-white/[0.1] backdrop-blur mr-20"
+          class="music-cards max-w-[1004px] w-full p-5 rounded-[20px] ring-white ring-[0.5px] ring-inset text-white bg-white/[0.1] backdrop-blur mr-20"
         >
           <div class="top-part flex justify-between mb-4">
             <h1 class="font-medium text-lg">Top Recommendation</h1>
@@ -91,9 +91,9 @@
             class="m-card-carousel no-scrollbar whitespace-nowrap max-w-[964px] overflow-hidden overflow-x-auto flex rounded-[16px] p-4 bg-[#d8d8d8]/[0.4] backdrop-blur-3xl"
           ></div>
           <div class="music-b-card flex mt-5">
-            <div class="artists">
+            <div class="artists max-w-[606px] w-full">
               <h1 class="font-medium text-lg mb-4">Following Artists</h1>
-              <div class="artist-card-wrap flex"></div>
+              <div class="artist-card-wrap flex whitespace-nowrap overflow-hidden overflow-x-auto no-scrollbar max-w-[606px]"></div>
             </div>
             <div class="continue">
               <h1 class="font-medium mb-4 text-lg">Continue Playing</h1>
@@ -157,17 +157,41 @@
           </div>
         </div>
       </div>
-      <div class="music-control mx-auto bg-white/[0.1] backdrop-blur py-1 px-[6px] rounded-full w-fit flex items-center text-white">
-        <div class="flex items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"><i class="ri-rewind-fill mx-2"></i></div>
-        <div class="flex items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"><i class="ri-pause-fill mx-2 font-black"></i></div>
-        <div class="flex items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"><i class="ri-speed-fill mx-2"></i></div>
-        <div class="music-playing p-1 rounded-full bg-black/[0.2] backdrop-blur mx-3 flex items-center">
+      <div
+        class="music-control mx-auto bg-white/[0.1] backdrop-blur py-1 px-[6px] rounded-full w-fit flex items-center text-white"
+      >
+        <div
+          class="flex prev items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"
+        >
+          <i class="ri-rewind-fill mx-2"></i>
+        </div>
+        <div
+          class="flex play items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"
+        >
+          <i class="ri-play-fill mx-2 font-black"></i>
+        </div>
+        <div
+          class="flex hidden pause items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"
+        >
+          <i class="ri-pause-fill mx-2 font-black"></i>
+        </div>
+        <div
+          class="flex next items-center justify-center cursor-pointer transition-all hover:bg-black/[0.1] rounded-full w-8 h-8"
+        >
+          <i class="ri-speed-fill mx-2"></i>
+        </div>
+        <div
+          class="music-playing p-1 rounded-full bg-black/[0.2] backdrop-blur mx-3 flex items-center"
+        >
           <div class="mp-img mr-2 w-7 h-7 rounded-full overflow-hidden">
-            <img src="./hq720.jpg" alt="" />
+            <img
+              src="https://c.saavncdn.com/291/Aap-Par-Lakhon-Salam-Urdu-2020-20201223135026-150x150.jpg"
+              alt=""
+            />
           </div>
           <div class="mp-content">
-            <h4 class="text-[12px] font-normal">Kya bataun ki madina</h4>
-            <h4 class="text-[10px] text-[#ddd]">Syed Hassan</h4>
+            <h4 class="text-[12px] font-normal">Aap Par Lakhon</h4>
+            <h4 class="text-[10px] text-[#ddd]">Owaiz Raza</h4>
           </div>
           <i class="ri-speaker-fill ml-14 mr-2"></i>
           <i class="ri-more-fill ml-3 mr-3"></i>
