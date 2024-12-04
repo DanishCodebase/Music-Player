@@ -141,12 +141,12 @@ function playNaat() {
       var naat = naats[count];
       document.querySelector(
         ".music-playing"
-      ).innerHTML = `<div class="mp-img mr-2 w-7 h-7 rounded-full overflow-hidden">
-            <img src="${naat.img}" alt="" />
-          </div>
-          <div class="mp-content">
-            <h4 class="text-[12px] font-normal">${naat.naat}</h4>
-            <h4 class="text-[10px] text-[#ddd]">${naat.name}</h4>
+      ).innerHTML = `<div class="mp-img w-7 h-7 rounded-full overflow-hidden">
+            <img src="${naat.img}" alt="" class="mr-2" />
+            <div class="mp-content">
+             <h4 class="text-[12px] font-normal">${naat.naat}</h4>
+             <h4 class="text-[10px] text-[#ddd]">${naat.name}</h4>
+            </div>
           </div>
           <i class="ri-speaker-fill ml-14 mr-2"></i>
           <i class="ri-more-fill ml-3 mr-3"></i>

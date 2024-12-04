@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-auto" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,8 +19,8 @@
       }
     </style>
   </head>
-  <body>
-    <main class="bg-[url('./homebg.jpg')] h-screen p-5 bg-cover bg-center">
+  <body class="bg-[url('./homebg.jpg')] h-auto bg-no-repeat bg-center bg-cover">
+    <main class="p-5">
       <div
         class="search-box backdrop-blur-[1px] border flex items-center max-w-[800px] mx-auto rounded-full p-[6px]"
       >
@@ -35,7 +35,7 @@
           <i class="text-white ri-arrow-go-forward-line"></i>
         </div>
         <div
-          class="search bg-black/[0.15] p-1 rounded-full text-white flex items-center ml-12 mr-24 w-full"
+          class="search bg-black/[0.15] p-1 rounded-full text-white flex items-center ml-2 mr-4 min-[360px]:ml-12 min-[360px]:mr-24 w-full"
         >
           <i class="ri-lock-2-line ml-2 mr-3"></i>
           <input
@@ -90,15 +90,19 @@
           <div
             class="m-card-carousel no-scrollbar whitespace-nowrap max-w-[964px] overflow-hidden overflow-x-auto flex rounded-[16px] p-4 bg-[#d8d8d8]/[0.4] backdrop-blur-3xl"
           ></div>
-          <div class="music-b-card flex mt-5">
-            <div class="artists max-w-[606px] w-full">
+          <div class="music-b-card flex max-[768px]:flex-col mt-5">
+            <div
+              class="artists min-[768.5px]:max-w-[400px] min-[900px]:max-w-[500px] lg:max-w-[606px] w-full"
+            >
               <h1 class="font-medium text-lg mb-4">Following Artists</h1>
-              <div class="artist-card-wrap flex whitespace-nowrap overflow-hidden overflow-x-auto no-scrollbar max-w-[606px]"></div>
+              <div
+                class="artist-card-wrap flex whitespace-nowrap overflow-hidden overflow-x-auto no-scrollbar min-[767.5px]:[606px]"
+              ></div>
             </div>
-            <div class="continue">
+            <div class="continue w-full">
               <h1 class="font-medium mb-4 text-lg">Continue Playing</h1>
               <div
-                class="latest-played mb-2 flex items-center p-2 rounded-lg bg-white/[0.1] backdrop-blur"
+                class="latest-played mb-2 flex items-center justify-between p-2 rounded-lg bg-white/[0.1] backdrop-blur w-full"
               >
                 <div class="flex">
                   <div
@@ -111,7 +115,7 @@
                     <h4 class="text-[11px]">Syed Hassan</h4>
                   </div>
                 </div>
-                <div class="flex ml-14">
+                <div class="flex">
                   <div
                     class="played-t flex items-center rounded-lg bg-white/[0.1] backdrop-blur p-1 mr-[6px]"
                   >
@@ -126,7 +130,7 @@
                 </div>
               </div>
               <div
-                class="latest-played flex items-center p-2 rounded-lg bg-white/[0.1] backdrop-blur"
+                class="latest-played flex items-center justify-between p-2 rounded-lg bg-white/[0.1] w-full backdrop-blur"
               >
                 <div class="flex">
                   <div
@@ -139,7 +143,7 @@
                     <h4 class="text-[11px]">Syed Hassan</h4>
                   </div>
                 </div>
-                <div class="flex ml-14">
+                <div class="flex">
                   <div
                     class="played-t flex items-center rounded-lg bg-white/[0.1] backdrop-blur p-1 mr-[6px]"
                   >
@@ -181,24 +185,30 @@
           <i class="ri-speed-fill mx-2"></i>
         </div>
         <div
-          class="music-playing p-1 rounded-full bg-black/[0.2] backdrop-blur mx-3 flex items-center"
+          class="music-playing w-full min-w-[170px] min-[450px]:min-w-[246.4px] p-1 rounded-full bg-black/[0.2] backdrop-blur ml-3 min-[600px]:mx-3 flex items-center justify-between"
         >
-          <div class="mp-img mr-2 w-7 h-7 rounded-full overflow-hidden">
-            <img
-              src="https://c.saavncdn.com/291/Aap-Par-Lakhon-Salam-Urdu-2020-20201223135026-150x150.jpg"
-              alt=""
-            />
+          <div
+            class="mp-img flex items-center"
+          >
+            <div class="flex items-center w-7 h-7 rounded-full overflow-hidden mr-2">
+              <img
+                src="https://c.saavncdn.com/291/Aap-Par-Lakhon-Salam-Urdu-2020-20201223135026-150x150.jpg"
+                alt=""
+              />
+            </div>
+            <div class="mp-content">
+              <h4 class="text-[12px] font-normal">Aap Par Lakhon</h4>
+              <h4 class="text-[10px] text-[#ddd]">Owaiz Raza</h4>
+            </div>
           </div>
-          <div class="mp-content">
-            <h4 class="text-[12px] font-normal">Aap Par Lakhon</h4>
-            <h4 class="text-[10px] text-[#ddd]">Owaiz Raza</h4>
+          <div class="flex items-center">
+            <i class="ri-speaker-fill max-[360px]:hidden mr-5"></i>
+            <i class="ri-more-fill mr-3"></i>
           </div>
-          <i class="ri-speaker-fill ml-14 mr-2"></i>
-          <i class="ri-more-fill ml-3 mr-3"></i>
         </div>
-        <i class="ri-chat-quote-line mx-3"></i>
-        <i class="ri-file-list-line mx-3"></i>
-        <i class="ri-volume-up-fill mx-3 mr-[14px]"></i>
+        <i class="ri-chat-quote-line max-[600px]:hidden mx-3"></i>
+        <i class="ri-file-list-line max-[600px]:hidden mx-3"></i>
+        <i class="ri-volume-up-fill max-[600px]:hidden mx-3 mr-[14px]"></i>
       </div>
       <!-- <div
         class="bg-white/[0.1] mx-auto search-box flex items-center border w-fit p-[8px] rounded-full"
